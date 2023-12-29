@@ -7,7 +7,7 @@ class Meta_Loss_Reward_Center:
         self.gpt = myGPT_Drv.chat_Drv(apiKey=apiKey, endpoint=endpoint)
         self.introdution = f"You are working inside a brain at reward & loss center."
         self.rules = rules
-        self.outputFormat = """{"loss": 0 - 1, "reward": 0 - 1, "reason": "..."}"""
+        self.outputFormat = """{"loss": 0 - 1 float value, "reward": 0 - 1 float value, "reason": "..."}"""
 
     def forward(self, x):
         context = f"{self.introdution}\n" + f"Rules: {self.rules}\n" + f"Event: {x}\n" + f"Output Format: {self.outputFormat}\n"
