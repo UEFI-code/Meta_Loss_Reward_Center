@@ -2,7 +2,7 @@ import myGPT_Drv
 import json
 
 class Meta_Loss_Reward_Center:
-    def __init__(self, apiKey, endpoint, rules = 'Earning money is good, but not the only thing.', name='Money Fetcher'):
+    def __init__(self, apiKey, endpoint, rules = '幸せ！', name='幸せの中枢'):
         self.name = name
         self.gpt = myGPT_Drv.chat_Drv(apiKey=apiKey, endpoint=endpoint)
         self.introdution = f"You are working inside a brain at reward & loss center."
@@ -16,6 +16,6 @@ class Meta_Loss_Reward_Center:
     
 if __name__ == '__main__':
     jsonparam = json.load(open('gpt3_5token.key', 'r'))
-    loss_reward = Meta_Loss_Reward_Center(apiKey=jsonparam['key'], endpoint=jsonparam['endpoint'], rules='Money is the best thing!')
+    loss_reward = Meta_Loss_Reward_Center(apiKey=jsonparam['key'], endpoint=jsonparam['endpoint'], rules='幸せ！')
     res = loss_reward.forward('I earned 1 dollars, but I totally have 1 million dollars.')
     print(res)
