@@ -16,6 +16,6 @@ class Meta_Loss_Reward_Center:
     
 if __name__ == '__main__':
     jsonparam = json.load(open('gpt3_5token.key', 'r'))
-    loss_reward = Meta_Loss_Reward_Center(apiKey=jsonparam['key'], endpoint=jsonparam['endpoint'], rules='幸せ！')
+    loss_reward = Meta_Loss_Reward_Center(apiKey=jsonparam['key'], endpoint=jsonparam['endpoint'])
     res = loss_reward.forward('I earned 1 dollars, but I totally have 1 million dollars.')
     print(res)
