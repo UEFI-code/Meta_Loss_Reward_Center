@@ -15,8 +15,9 @@
 
 ```python
 jsonparam = json.load(open('gpt3_5token.key', 'r'))
-loss_reward = Meta_Loss_Reward_Center(apiKey=jsonparam['key'], endpoint=jsonparam['endpoint'], rules='幸せ！')
-res = loss_reward.forward('I earned 1 dollars, but I totally have 1 million dollars.')
+loss_reward = Meta_Loss_Reward_Center(apiKey=jsonparam['key'], endpoint=jsonparam['endpoint'])
+while True:
+    print(loss_reward.forward(input('Event: ')))
 print(res)
 ```
 
