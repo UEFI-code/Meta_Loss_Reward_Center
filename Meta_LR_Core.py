@@ -3,10 +3,10 @@ import json
 import time
 
 class Meta_Loss_Reward_Core:
-    def __init__(self, apiKey, endpoint, rules = '幸せ！', name='幸せの中枢', maxTry=5):
+    def __init__(self, apiKey, endpoint, name='幸せの中枢', rules='幸せ！', maxTry=5):
         self.name = name
         self.gpt = myGPT_Drv.chat_Drv(apiKey=apiKey, endpoint=endpoint)
-        self.introdution = f"You are working inside a brain at reward & loss center."
+        self.introdution = f"You are {name}, working inside a brain at reward & loss center."
         self.rules = rules
         self.outputFormat = """{"loss": 0 - 1 float value, "reward": 0 - 1 float value, "reason": "..."}"""
         self.maxTry = maxTry
