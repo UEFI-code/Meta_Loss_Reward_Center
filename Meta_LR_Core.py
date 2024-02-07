@@ -13,7 +13,7 @@ class Meta_Loss_Reward_Core:
         self.result = None
 
     def forward(self, x):
-        context = f"{self.introdution}\n" + f"Rules: {self.rules}\n" + f"Event: {x}\n" + f"Output Format: {self.outputFormat}, Do not output extar text!\n"
+        context = f"{self.introdution}\n" + f"Rules: {self.rules}\n" + f"Event: {x}\n" + f"Output Format: {self.outputFormat}, Do not output extar text!\nOutput: "
         for _ in range(self.maxTry):
             try:
                 self.result = json.loads(self.gpt.forward(context))
